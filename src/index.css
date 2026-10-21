@@ -1,0 +1,19 @@
+@tailwind base;@tailwind components;@tailwind utilities;
+body{margin:0;min-height:100vh;color:#fff;font-family:"Inter Variable",sans-serif;-webkit-font-smoothing:antialiased;background:#0b1030}
+::selection{background:#fbbf24;color:#000}
+::-webkit-scrollbar{height:8px;width:8px}::-webkit-scrollbar-thumb{background:rgba(255,255,255,.3);border-radius:9px}
+:focus-visible{outline:2px solid #fbbf24;outline-offset:2px}
+.glass{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+@keyframes drop{from{transform:translateY(-10vh)}to{transform:translateY(110vh)}}
+.drop{position:absolute;top:0;width:1.5px;height:18px;background:linear-gradient(transparent,rgba(255,255,255,.65));animation:drop linear infinite}
+@keyframes snow{from{transform:translate(0,-10vh)}to{transform:translate(30px,110vh)}}
+.flake{position:absolute;top:0;width:6px;height:6px;border-radius:50%;background:#fff;opacity:.8;animation:snow linear infinite}
+@keyframes twinkle{50%{opacity:.15}}
+.star{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff;animation:twinkle ease-in-out infinite}
+@keyframes drift{from{transform:translateX(-40vw)}to{transform:translateX(130vw)}}
+.cloud{position:absolute;border-radius:50%;background:rgba(255,255,255,.35);filter:blur(40px);animation:drift linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.rays{position:absolute;right:-20vmin;top:-20vmin;width:70vmin;height:70vmin;border-radius:50%;filter:blur(8px);animation:spin 60s linear infinite;background:conic-gradient(rgba(255,255,255,.28),transparent 10%,rgba(255,255,255,.2) 20%,transparent 30%,rgba(255,255,255,.28) 40%,transparent 50%,rgba(255,255,255,.2) 60%,transparent 70%,rgba(255,255,255,.28) 80%,transparent 90%)}
+@keyframes flash{0%,92%,100%{opacity:0}94%{opacity:.6}96%{opacity:.1}98%{opacity:.5}}
+.flash{position:absolute;inset:0;background:#fff;animation:flash 7s infinite}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
